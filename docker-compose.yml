@@ -1,4 +1,17 @@
 services:
+  app:
+    build: .
+    container_name: campusflow_app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      SESSION_SECRET: clave_docker_campusflow
+      NODE_ENV: production
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:16
     container_name: campusflow_postgres

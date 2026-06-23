@@ -28,7 +28,7 @@ function login(req, res) {
     nombre: 'Administrador Principal',
     correo: 'Brunehitor@gmail.cl',
     password: '12345678',
-    rol: 'admin',
+    rol: 'Admin',
   };
 
   if (correo === usuarioDemo.correo && password === usuarioDemo.password) {
