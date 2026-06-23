@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Participantes</title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <main class="page">
+    <section class="dashboard-header">
+      <h1>Gestión de participantes</h1>
+      <p>
+        Esta sección muestra participantes de ejemplo inscritos en diferentes
+        actividades universitarias, junto con su estado de asistencia.
+      </p>
+    </section>
+
+    <section class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Participante</th>
+            <th>Correo</th>
+            <th>Actividad</th>
+            <th>Asistencia</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Bruno Molina</strong></td>
+            <td>bruno.molina@alumno.cl</td>
+            <td>Taller de Introducción a DevOps</td>
+            <td><span class="badge badge-success">Presente</span></td>
+          </tr>
+
+          <tr>
+            <td><strong>Constanza Molina</strong></td>
+            <td>constanza.molina@alumno.cl</td>
+            <td>Reunión de Coordinación Académica</td>
+            <td><span class="badge badge-warning">Pendiente</span></td>
+          </tr>
+
+          <tr>
+            <td><strong>Misael Meza</strong></td>
+            <td>misael.meza@alumno.cl</td>
+            <td>Charla de Vinculación con el Medio</td>
+            <td><span class="badge badge-success">Presente</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

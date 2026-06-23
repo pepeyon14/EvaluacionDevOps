@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de usuario</title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <main class="container">
+    <section class="card form-card">
+      <h1>Registro de usuario</h1>
+
+      <p class="small-text">
+        Esta vista representa el módulo de registro de usuarios de la plataforma.
+      </p>
+
+      <% if (error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+
+      <form action="/register" method="POST" class="form">
+        <label for="nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ej: Lucas Molina"
+          required
+        />
+
+        <label for="correo">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="correo@ejemplo.cl"
+          required
+        />
+
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Ingrese una contraseña"
+          required
+        />
+
+        <button type="submit" class="btn">Registrar usuario</button>
+      </form>
+
+      <p class="small-text">
+        Registro demostrativo. Para ingresar al sistema use el usuario principal.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

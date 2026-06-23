@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <main class="page">
+    <section class="dashboard-header">
+      <div>
+        <h1>Panel principal</h1>
+        <p>
+          Bienvenido, <strong><%= user.nombre %></strong>
+        </p>
+        <p>
+          Rol actual: <strong><%= user.rol %></strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="module-card">
+        <h2>Actividades</h2>
+        <p>
+          Crear, modificar, eliminar y consultar actividades universitarias.
+        </p>
+        <a href="/actividades" class="btn">Ver módulo</a>
+      </article>
+
+      <article class="module-card">
+        <h2>Participantes</h2>
+        <p>
+          Inscripción de usuarios a actividades, control de asistencia y seguimiento de participación.
+        </p>
+        <a href="/participantes" class="btn btn-secondary">Ver módulo</a>
+      </article>
+
+      <article class="module-card">
+        <h2>Asistencia IA</h2>
+        <p>
+          Generación automática de descripciones y resúmenes para apoyar la planificación de actividades.
+        </p>
+        <a href="/ia" class="btn btn-secondary">Ver módulo</a>
+      </article>
+    </section>
+
+    <section class="info-card">
+      <h2>Resumen del sistema</h2>
+      <p>
+        Este panel centraliza los módulos principales de CampusFlow IA. Desde aquí se puede acceder
+        a la gestión de actividades, participantes y herramientas de apoyo con Inteligencia Artificial.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

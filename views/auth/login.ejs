@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <main class="container">
+    <section class="card form-card">
+      <h1>Iniciar sesión</h1>
+
+      <p class="small-text">
+        Acceso principal del sistema CampusFlow IA.
+      </p>
+
+      <% if (error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+
+      <form action="/login" method="POST" class="form">
+        <label for="correo">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="Brunehitor@gmail.cl"
+          required
+        />
+
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="12345678"
+          required
+        />
+
+        <button type="submit" class="btn">Ingresar</button>
+      </form>
+
+      <p class="small-text">
+        Usuario de prueba: <strong>Brunehitor@gmail.cl</strong> / <strong>12345678</strong>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

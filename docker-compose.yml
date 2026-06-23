@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: campusflow_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: campusflow
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - campusflow_data:/var/lib/postgresql/data
+
+volumes:
+  campusflow_data:

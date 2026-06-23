@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividades</title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <main class="page">
+    <section class="dashboard-header">
+      <h1>Gestión de actividades</h1>
+      <p>
+        En esta sección se muestran actividades universitarias de ejemplo.
+        La finalidad es representar cómo la plataforma organiza eventos académicos,
+        reuniones, talleres y actividades institucionales.
+      </p>
+    </section>
+
+    <section class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Lugar</th>
+            <th>Cupos</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Taller de Introducción a DevOps</strong></td>
+            <td>
+              Actividad orientada a explicar el uso de Git, Docker, GitHub Actions
+              y despliegue en AWS.
+            </td>
+            <td>30/06/2026</td>
+            <td>Laboratorio de Informática</td>
+            <td>25</td>
+            <td><span class="badge badge-success">Programada</span></td>
+          </tr>
+
+          <tr>
+            <td><strong>Reunión de Coordinación Académica</strong></td>
+            <td>
+              Instancia para revisar avances de proyectos académicos y coordinar
+              actividades del semestre.
+            </td>
+            <td>03/07/2026</td>
+            <td>Sala de reuniones</td>
+            <td>12</td>
+            <td><span class="badge badge-success">Confirmada</span></td>
+          </tr>
+
+          <tr>
+            <td><strong>Charla de Vinculación con el Medio</strong></td>
+            <td>
+              Actividad institucional orientada a presentar proyectos colaborativos
+              entre estudiantes y comunidad.
+            </td>
+            <td>08/07/2026</td>
+            <td>Auditorio central</td>
+            <td>60</td>
+            <td><span class="badge badge-warning">Abierta</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
