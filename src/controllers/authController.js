@@ -25,7 +25,7 @@ function login(req, res) {
 
   const usuarioDemo = {
     id: 1,
-    nombre: 'Administrador Principal',
+    nombre: 'Bruno Molina',
     correo: 'Brunehitor@gmail.cl',
     password: '12345678',
     rol: 'Admin',
