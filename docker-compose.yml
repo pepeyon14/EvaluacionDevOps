@@ -1,29 +1,56 @@
+# Define los servicios que Docker Compose va a levantar
 services:
+  # Servicio principal de la aplicación Node.js
   app:
+    # Construye la imagen usando el Dockerfile ubicado en la raíz del proyecto
     build: .
+
+    # Nombre del contenedor de la aplicación
     container_name: campusflow_app
+
+    # Reinicia el contenedor automáticamente si se detiene
     restart: always
+
+    # Mapea el puerto 3000 del computador al puerto 3000 del contenedor
     ports:
       - "3000:3000"
+
+    # Variables de entorno utilizadas por la aplicación
     environment:
       PORT: 3000
       SESSION_SECRET: clave_docker_campusflow
       NODE_ENV: production
+
+    # Indica que este servicio depende del servicio postgres
     depends_on:
       - postgres
 
+  # Servicio de base de datos PostgreSQL
   postgres:
+    # Usa la imagen oficial de PostgreSQL en su versión 16
     image: postgres:16
+
+    # Nombre del contenedor de la base de datos
     container_name: campusflow_postgres
+
+    # Reinicia el contenedor automáticamente si se detiene
     restart: always
+
+    # Variables de entorno para configurar la base de datos
     environment:
       POSTGRES_DB: campusflow
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
+    # Mapea el puerto 5432 del computador al puerto 5432 del contenedor
     ports:
       - "5432:5432"
+
+    # Volumen para mantener los datos de PostgreSQL aunque el contenedor se reinicie
     volumes:
       - campusflow_data:/var/lib/postgresql/data
 
+# Define los volúmenes usados por los servicios
 volumes:
+  # Volumen persistente para la base de datos PostgreSQL
   campusflow_data:

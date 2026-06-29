@@ -1,35 +1,52 @@
+# Nombre del workflow que aparecerá en la pestaña Actions de GitHub
 name: Pipeline DevOps CampusFlow IA
 
+# Define cuándo se ejecutará el pipeline
 on:
+  # Se ejecuta cada vez que se suben cambios a la rama main
   push:
     branches:
       - main
+
+  # También se ejecuta cuando se crea o actualiza un Pull Request hacia main
   pull_request:
     branches:
       - main
 
+# Define los trabajos que realizará GitHub Actions
 jobs:
+  # Nombre interno del trabajo
   validacion:
+    # Nombre visible del trabajo en GitHub Actions
     name: Validar aplicacion
+
+    # Define el sistema operativo donde se ejecutará el pipeline
     runs-on: ubuntu-latest
 
+    # Lista de pasos que se ejecutarán en orden
     steps:
+      # Descarga el código del repositorio dentro del entorno virtual de GitHub Actions
       - name: Descargar codigo del repositorio
         uses: actions/checkout@v4
 
+      # Instala y configura Node.js en la versión 20
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # Instala las dependencias del proyecto definidas en package.json
       - name: Instalar dependencias
         run: npm install
 
+      # Ejecuta ESLint para revisar errores de estilo y calidad de código
       - name: Ejecutar ESLint
         run: npm run lint
 
+      # Ejecuta las pruebas automatizadas configuradas con Jest
       - name: Ejecutar pruebas con Jest
         run: npm test
 
+      # Construye la imagen Docker de la aplicación
       - name: Construir imagen Docker
         run: docker build -t campusflow-ia .
